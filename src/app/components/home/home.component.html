@@ -1,0 +1,95 @@
+<section class="team-details">
+  <div class="container">
+    <div class="team-header">
+      <h1>Media and Development</h1>
+      <p>Lorem ipsum</p>
+    </div>
+
+    <!-- <div class="team-content">
+      <div class="team-member-card glass-card">
+        <div class="member-image">
+          <img src="assets/images/chris.jpg" alt="Christina Park">
+        </div>
+        <div class="member-info">
+          <h2>{{ teamMember.name }}</h2>
+          <p class="position">{{ teamMember.position }}</p>
+          <div class="info-grid">
+            <div class="info-item">
+              <span class="label">Email:</span>
+              <span class="value">{{ teamMember.email }}</span>
+            </div>
+            <div class="info-item">
+              <span class="label">Phone:</span>
+              <span class="value">{{ teamMember.phone }}</span>
+            </div>
+            <div class="info-item">
+              <span class="label">Location:</span>
+              <span class="value">{{ teamMember.location }}</span>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="help-section">
+        <h2>How Can I Help You</h2>
+        <div class="services-grid">
+          <div class="service-card" *ngFor="let service of services">
+            <div class="service-icon">
+              <div class="icon-circle"></div>
+            </div>
+            <h3>{{ service.title }}</h3>
+            <p>{{ service.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- </div> -->
+</section>
+
+<footer class="main-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-links">
+        <div class="link-group">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Works</a></li>
+            <li><a href="#">Career</a></li>
+          </ul>
+        </div>
+        <div class="link-group">
+          <h4>Help</h4>
+          <ul>
+            <li><a href="#">Customer Support</a></li>
+            <li><a href="#">Delivery Details</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="link-group">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Free eBooks</a></li>
+            <li><a href="#">Development Tutorial</a></li>
+            <li><a href="#">How to - Blog</a></li>
+            <li><a href="#">Youtube Playlist</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="newsletter">
+        <h4>Get in touch with us</h4>
+        <div class="subscribe-form">
+          <input type="email" placeholder="Enter your email">
+          <button class="btn">Subscribe</button>
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-icon">FB</a>
+          <a href="#" class="social-icon">TW</a>
+          <a href="#" class="social-icon">IN</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
