@@ -1,93 +1,136 @@
 <section class="team-details">
+  <div class="team-header">
+    <h1>Media and Development</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  </div>
+
   <div class="container">
-    <div class="team-header">
-      <h1>Media and Development</h1>
-      <p>Lorem ipsum</p>
-    </div>
-
-    <!-- <div class="team-content">
-      <div class="team-member-card glass-card">
-        <div class="member-image">
-          <img src="assets/images/chris.jpg" alt="Christina Park">
-        </div>
-        <div class="member-info">
-          <h2>{{ teamMember.name }}</h2>
-          <p class="position">{{ teamMember.position }}</p>
-          <div class="info-grid">
-            <div class="info-item">
-              <span class="label">Email:</span>
-              <span class="value">{{ teamMember.email }}</span>
-            </div>
-            <div class="info-item">
-              <span class="label">Phone:</span>
-              <span class="value">{{ teamMember.phone }}</span>
-            </div>
-            <div class="info-item">
-              <span class="label">Location:</span>
-              <span class="value">{{ teamMember.location }}</span>
+    <div class="help-section">
+      <h2>How Can I Help You</h2>
+      <div class="services-grid">
+        <div class="service-card neu neu-hover">
+          <div class="service-icon">
+            <div class="icon-circle neu-inset">
+              <i class="fa fa-lightbulb-o"></i>
             </div>
           </div>
+          <h3>Creative Solution</h3>
+          <p>Providing innovative creative solutions for your business needs.</p>
         </div>
-      </div> -->
 
-      <div class="help-section">
-        <h2>How Can I Help You</h2>
-        <div class="services-grid">
-          <div class="service-card" *ngFor="let service of services">
-            <div class="service-icon">
-              <div class="icon-circle"></div>
+        <div class="service-card neu neu-hover">
+          <div class="service-icon">
+            <div class="icon-circle neu-inset">
+              <i class="fa fa-headphones"></i>
             </div>
-            <h3>{{ service.title }}</h3>
-            <p>{{ service.description }}</p>
           </div>
+          <h3>Customer Support</h3>
+          <p>24/7 dedicated customer support to assist you with any queries.</p>
+        </div>
+
+        <div class="service-card neu neu-hover">
+          <div class="service-icon">
+            <div class="icon-circle neu-inset">
+              <i class="fa fa-rocket"></i>
+            </div>
+          </div>
+          <h3>Innovative Service</h3>
+          <p>Cutting-edge services tailored to meet modern business challenges.</p>
         </div>
       </div>
     </div>
-  <!-- </div> -->
+
+    <section class="new-section help-style-section">
+      <div class="help-content">
+        <div class="help-text">
+          <h2>How Can Help You</h2>
+          <p>Penatibus pulvinar hac lacinia interdum fermentum tortor leo a montes ridlus nisi mauris quis potenti habitant cum consequat varius est maecenas pretium dignissim facilisi top level vehicula.</p>
+
+          <div class="feature-list">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fa fa-user"></i> <!-- Placeholder icon -->
+              </div>
+              <div class="feature-text">
+                <h4>Creative Solution</h4>
+                <p>Congue lacinia aenean venenatis arcu rutrum vitae sus pena tibus lectus dapibus integer habitasses</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fa fa-thumbs-up"></i> <!-- Placeholder icon -->
+              </div>
+              <div class="feature-text">
+                <h4>Customer Support</h4>
+                <p>Congue lacinia aenean venenatis arcu rutrum vitae sus pena tibus lectus dapibus integer habitasses</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fa fa-users"></i> <!-- Placeholder icon -->
+              </div>
+              <div class="feature-text">
+                <h4>Executive Member</h4>
+                <p>Congue lacinia aenean venenatis arcu rutrum vitae sus pena tibus lectus dapibus integer habitasses</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="help-image">
+          <img src="/assets/images/team-member.jpg" alt="Business professional">
+        </div>
+      </div>
+    </section>
+  </div>
 </section>
 
 <footer class="main-footer">
   <div class="container">
-    <div class="footer-content">
+    <div class="footer-content glass">
       <div class="footer-links">
         <div class="link-group">
           <h4>Company</h4>
           <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Features</a></li>
-            <li><a href="#">Works</a></li>
-            <li><a href="#">Career</a></li>
+            <li><a href="#"><i class="fa fa-building-o"></i> About</a></li>
+            <li><a href="#"><i class="fa fa-star"></i> Features</a></li>
+            <li><a href="#"><i class="fa fa-briefcase"></i> Works</a></li>
+            <li><a href="#"><i class="fa fa-users"></i> Career</a></li>
           </ul>
         </div>
         <div class="link-group">
           <h4>Help</h4>
           <ul>
-            <li><a href="#">Customer Support</a></li>
-            <li><a href="#">Delivery Details</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
-            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#"><i class="fa fa-question-circle"></i> Customer Support</a></li>
+            <li><a href="#"><i class="fa fa-truck"></i> Delivery Details</a></li>
+            <li><a href="#"><i class="fa fa-file-text"></i> Terms & Conditions</a></li>
+            <li><a href="#"><i class="fa fa-shield"></i> Privacy Policy</a></li>
           </ul>
         </div>
         <div class="link-group">
           <h4>Resources</h4>
           <ul>
-            <li><a href="#">Free eBooks</a></li>
-            <li><a href="#">Development Tutorial</a></li>
-            <li><a href="#">How to - Blog</a></li>
-            <li><a href="#">Youtube Playlist</a></li>
+            <li><a href="#"><i class="fa fa-book"></i> Free eBooks</a></li>
+            <li><a href="#"><i class="fa fa-code"></i> Development Tutorial</a></li>
+            <li><a href="#"><i class="fa fa-rss"></i> How to - Blog</a></li>
+            <li><a href="#"><i class="fa fa-youtube-play"></i> Youtube Playlist</a></li>
           </ul>
         </div>
       </div>
       <div class="newsletter">
         <h4>Get in touch with us</h4>
         <div class="subscribe-form">
-          <input type="email" placeholder="Enter your email">
-          <button class="btn">Subscribe</button>
+          <input type="email" placeholder="Enter your email" class="neu-inset">
+          <button class="btn neu-hover">
+            <i class="fa fa-paper-plane"></i> Subscribe
+          </button>
         </div>
         <div class="social-links">
-          <a href="#" class="social-icon">FB</a>
-          <a href="#" class="social-icon">TW</a>
-          <a href="#" class="social-icon">IN</a>
+          <a href="#" class="social-icon neu neu-hover"><i class="fa fa-facebook"></i></a>
+          <a href="#" class="social-icon neu neu-hover"><i class="fa fa-twitter"></i></a>
+          <a href="#" class="social-icon neu neu-hover"><i class="fa fa-linkedin"></i></a>
         </div>
       </div>
     </div>

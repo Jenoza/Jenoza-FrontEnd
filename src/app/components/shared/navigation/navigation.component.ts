@@ -16,8 +16,8 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
           </a>
           <div class="nav-links">
             <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">Home</a>
+            <a routerLink="/about" routerLinkActive="active" class="nav-link">About</a>
             <a routerLink="/services" routerLinkActive="active" class="nav-link">Services</a>
-            <a routerLink="/team" routerLinkActive="active" class="nav-link">Team</a>
             <a routerLink="/news" routerLinkActive="active" class="nav-link">News</a>
             <a routerLink="/contact" routerLinkActive="active" class="nav-link">Contact</a>
           </div>

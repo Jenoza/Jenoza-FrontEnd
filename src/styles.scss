@@ -10,6 +10,17 @@
   --spacing-unit: 1rem;
   --border-radius: 8px;
   --transition: all 0.3s ease;
+
+  /* Glassmorphism variables */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-blur: 10px;
+  --glass-border: 1px solid rgba(255, 255, 255, 0.2);
+
+  /* Neumorphism variables */
+  --neu-bg: #e0e5ec;
+  --neu-shadow-light: #ffffff;
+  --neu-shadow-dark: #a3b1c6;
+  --neu-shadow-size: 8px;
 }
 
 /* Reset and base styles */
@@ -106,4 +117,57 @@ h3 {
 
 p {
   margin-bottom: var(--spacing-unit);
+}
+
+/* Glassmorphism styles */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: var(--glass-border);
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.glass-hover {
+  transition: var(--transition);
+  &:hover {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
+
+/* Neumorphism styles */
+.neu {
+  background: var(--neu-bg);
+  border-radius: var(--border-radius);
+  box-shadow:
+    var(--neu-shadow-size) var(--neu-shadow-size) calc(var(--neu-shadow-size) * 2) var(--neu-shadow-dark),
+    calc(-1 * var(--neu-shadow-size)) calc(-1 * var(--neu-shadow-size)) calc(var(--neu-shadow-size) * 2) var(--neu-shadow-light);
+}
+
+.neu-inset {
+  background: var(--neu-bg);
+  border-radius: var(--border-radius);
+  box-shadow:
+    inset var(--neu-shadow-size) var(--neu-shadow-size) calc(var(--neu-shadow-size) * 2) var(--neu-shadow-dark),
+    inset calc(-1 * var(--neu-shadow-size)) calc(-1 * var(--neu-shadow-size)) calc(var(--neu-shadow-size) * 2) var(--neu-shadow-light);
+}
+
+.neu-hover {
+  transition: var(--transition);
+  &:hover {
+    box-shadow:
+      calc(var(--neu-shadow-size) * 1.2) calc(var(--neu-shadow-size) * 1.2) calc(var(--neu-shadow-size) * 2.4) var(--neu-shadow-dark),
+      calc(-1 * var(--neu-shadow-size) * 1.2) calc(-1 * var(--neu-shadow-size) * 1.2) calc(var(--neu-shadow-size) * 2.4) var(--neu-shadow-light);
+  }
+}
+
+/* Combined styles */
+.glass-neu {
+  @extend .glass;
+  box-shadow:
+    var(--neu-shadow-size) var(--neu-shadow-size) calc(var(--neu-shadow-size) * 2) var(--neu-shadow-dark),
+    calc(-1 * var(--neu-shadow-size)) calc(-1 * var(--neu-shadow-size)) calc(var(--neu-shadow-size) * 2) var(--neu-shadow-light);
 }
