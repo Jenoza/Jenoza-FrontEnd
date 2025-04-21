@@ -29,7 +29,7 @@ import { RouterLink } from '@angular/router';
       background-position: center;
       color: white;
       text-align: center;
-      margin-top: 80px;
+      margin-top: 0 auto;
     }
 
     .overlay {
