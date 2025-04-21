@@ -2,7 +2,7 @@
 
 .team-details {
   padding: 0 auto;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background-color:#121212;
   min-height: 100vh;
   position: relative;
   border-bottom: none;
@@ -11,7 +11,7 @@
 .team-header {
   text-align: center;
   margin-bottom: 3rem;
-  padding: 6rem;
+  padding: 10rem;
   border-radius: 0;
   width: 100%;
   position: relative;
@@ -54,6 +54,7 @@
   padding: 0;
   margin: 0;
   width: 100%;
+  background-color: #121212;
 }
 
 .team-content {
@@ -153,7 +154,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: rgba(255, 255, 255, 0.8);
+      background-color: #FF5722;
 
       i {
         font-size: 2.5rem;
@@ -178,7 +179,7 @@
   padding: 4rem 0;
   margin-top: 3rem;
   border-top: none; /* Remove previous border if not desired */
-  background-color: #f8f9fa; /* Light background like the image */
+  background-color: #121212; /* Light background like the image */
 }
 
 .help-content {
@@ -254,7 +255,7 @@
     width: 100%;
     height: auto;
     border-radius: var(--border-radius);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 6px rgba(238, 230, 230, 0.808);
   }
 }
 /* End of Styles for the New Section */
