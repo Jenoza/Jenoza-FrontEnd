@@ -1,3 +1,5 @@
+@use "sass:color";
+
 .team-details {
   padding: 0 auto;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -380,7 +382,7 @@
     box-shadow: none;
 
     &:hover {
-       background-color: darken(#FF5722, 10%);
+       background-color: color.adjust(#FF5722, $lightness: -10%);
        transform: none;
     }
 
