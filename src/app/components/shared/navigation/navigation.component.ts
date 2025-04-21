@@ -10,10 +10,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     <nav class="main-nav">
       <div class="container">
         <div class="nav-content">
-          <a routerLink="/" class="logo">
-            <span class="logo-icon">J</span>
-            Jenoza
-          </a>
+        <img src="/assets/images/Logo101.png" alt="Jenoza" style="height: 80px; width: auto; margin-left: 80px;" />
           <div class="nav-links">
             <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">Home</a>
             <a routerLink="/about" routerLinkActive="active" class="nav-link">About</a>
