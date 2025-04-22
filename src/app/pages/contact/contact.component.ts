@@ -11,7 +11,7 @@ import { PageHeaderComponent } from '../../components/shared/page-header/page-he
     <jnz-page-header
       title="Contact Us"
       subtitle="Let's start a conversation"
-      backgroundImage="url('../../assets/images/2BG.jpg')"
+      backgroundImage="url('../../assets/images/Contact.jpg')"
       overlayColor="rgba(0, 0, 0, 0.6)">
     </jnz-page-header>
 

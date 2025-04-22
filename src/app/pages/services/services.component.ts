@@ -12,7 +12,7 @@ import { RouterLink } from '@angular/router';
     <jnz-page-header
       title="Our Services"
       subtitle="Discover how we can help transform your business"
-      backgroundImage="url('../../assets/images/2BG.jpg')"
+      backgroundImage="url('../../assets/images/services.jpg')"
       overlayColor="rgba(0, 0, 0, 0.6)">
     </jnz-page-header>
 
