@@ -18,9 +18,9 @@ export const routes: Routes = [
     title: 'Our Services - Jenoza'
   },
   {
-    path: 'news',
-    loadComponent: () => import('./pages/news/news.component').then(m => m.NewsComponent),
-    title: 'Latest News - Jenoza'
+    path: 'talent',
+    loadComponent: () => import('./pages/talent/talent.component').then(m => m.TalentComponent),
+    title: 'Talent Showcase - Jenoza'
   },
   {
     path: 'contact',
