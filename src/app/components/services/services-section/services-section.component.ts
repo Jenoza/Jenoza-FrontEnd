@@ -8,8 +8,14 @@ import { ServiceCardComponent } from '../service-card/service-card.component';
   imports: [CommonModule, ServiceCardComponent],
   template: `
     <section class="services-section">
+      <div class="bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+      </div>
       <div class="container">
         <div class="section-header">
+          <div class="header-line"></div>
           <h2>Our Services</h2>
           <p>Comprehensive solutions tailored to your needs</p>
         </div>
@@ -27,57 +33,119 @@ import { ServiceCardComponent } from '../service-card/service-card.component';
   `,
   styles: [`
     .services-section {
-      padding: 60px 0 80px;
-      background-color: var(--background-light, #f9f9f9);
+      padding: 80px 0 100px;
+      background-color: #f8f9fa;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bg-shapes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      background: linear-gradient(45deg, rgba(255, 87, 34, 0.1), rgba(255, 152, 0, 0.05));
+      filter: blur(40px);
+    }
+
+    .shape-1 {
+      width: 500px;
+      height: 500px;
+      top: -200px;
+      right: -100px;
+    }
+
+    .shape-2 {
+      width: 400px;
+      height: 400px;
+      bottom: -150px;
+      left: -100px;
+      background: linear-gradient(45deg, rgba(33, 150, 243, 0.05), rgba(156, 39, 176, 0.05));
+    }
+
+    .shape-3 {
+      width: 300px;
+      height: 300px;
+      top: 40%;
+      left: 30%;
+      background: linear-gradient(45deg, rgba(255, 235, 59, 0.05), rgba(255, 193, 7, 0.08));
     }
 
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 20px;
+      position: relative;
+      z-index: 1;
     }
 
     .section-header {
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 60px;
+      position: relative;
+
+      .header-line {
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, #ff5722, #ff9800);
+        margin: 0 auto 20px;
+        border-radius: 2px;
+      }
 
       h2 {
-        font-size: 32px;
-        color: var(--text-dark, #333);
-        margin-bottom: 12px;
+        font-size: 36px;
+        color: #333;
+        margin-bottom: 15px;
         font-weight: 600;
+        position: relative;
+        display: inline-block;
       }
 
       p {
-        font-size: 17px;
-        color: var(--text-muted, #666);
+        font-size: 18px;
+        color: #666;
         max-width: 600px;
         margin: 0 auto;
+        line-height: 1.6;
       }
     }
 
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
+      gap: 40px;
     }
 
     @media (max-width: 1024px) {
       .services-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 35px;
       }
     }
 
     @media (max-width: 768px) {
       .services-section {
-        padding: 50px 0 60px;
+        padding: 60px 0 80px;
       }
 
       .section-header {
-        margin-bottom: 40px;
+        margin-bottom: 50px;
+
+        .header-line {
+          width: 60px;
+          margin-bottom: 15px;
+        }
 
         h2 {
-          font-size: 28px;
+          font-size: 30px;
         }
 
         p {
@@ -87,7 +155,7 @@ import { ServiceCardComponent } from '../service-card/service-card.component';
 
       .services-grid {
         grid-template-columns: 1fr;
-        gap: 25px;
+        gap: 30px;
       }
     }
   `]
