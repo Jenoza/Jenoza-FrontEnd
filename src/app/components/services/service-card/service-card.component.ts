@@ -27,21 +27,48 @@ import { CommonModule } from '@angular/common';
   `,
   styles: [`
     .service-card {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-      transition: all 0.3s ease;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      box-shadow:
+        20px 20px 60px rgba(0, 0, 0, 0.05),
+        -20px -20px 60px rgba(255, 255, 255, 0.8),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+      transition: all 0.4s ease;
       height: 100%;
-      padding: 30px;
+      padding: 35px 30px;
       display: flex;
       flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #ff5722, #ff9800);
+        opacity: 0.8;
+      }
 
       &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        transform: translateY(-8px);
+        box-shadow:
+          20px 20px 60px rgba(0, 0, 0, 0.08),
+          -20px -20px 60px rgba(255, 255, 255, 0.8),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.1);
 
         .icon-wrapper {
-          background-color: var(--secondary-color, #ff5722);
+          transform: scale(1.05);
+          background: linear-gradient(135deg, #ff5722, #ff9800);
+          box-shadow: 0 10px 20px rgba(255, 87, 34, 0.3);
+        }
+
+        .learn-more {
+          box-shadow: 0 5px 15px rgba(255, 87, 34, 0.3);
         }
       }
     }
@@ -50,18 +77,21 @@ import { CommonModule } from '@angular/common';
       display: flex;
       flex-direction: column;
       height: 100%;
+      position: relative;
+      z-index: 1;
     }
 
     .icon-wrapper {
       width: 80px;
       height: 80px;
-      background: var(--primary-color, #ff5722);
+      background: linear-gradient(135deg, #ff5722, #ff7043);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 20px;
-      transition: all 0.3s ease;
+      margin: 0 auto 25px;
+      transition: all 0.4s ease;
+      box-shadow: 0 8px 16px rgba(255, 87, 34, 0.2);
 
       i {
         font-size: 32px;
@@ -71,16 +101,16 @@ import { CommonModule } from '@angular/common';
 
     h3 {
       font-size: 22px;
-      color: var(--text-dark, #333);
+      color: #333;
       margin: 0 0 15px;
       text-align: center;
       font-weight: 600;
     }
 
     p {
-      color: var(--text-muted, #666);
+      color: #666;
       margin: 0 0 20px;
-      line-height: 1.5;
+      line-height: 1.6;
       text-align: center;
       flex-grow: 0;
     }
@@ -96,12 +126,17 @@ import { CommonModule } from '@angular/common';
         display: flex;
         align-items: flex-start;
         gap: 10px;
-        margin-bottom: 12px;
-        color: var(--text-dark, #333);
+        margin-bottom: 14px;
+        color: #444;
         font-size: 15px;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: translateX(3px);
+        }
 
         i {
-          color: var(--primary-color, #ff5722);
+          color: #ff5722;
           font-size: 14px;
           margin-top: 4px;
         }
@@ -114,31 +149,32 @@ import { CommonModule } from '@angular/common';
     }
 
     .learn-more {
-      background: var(--primary-color, #ff5722);
+      background: linear-gradient(135deg, #ff5722, #ff7043);
       color: white;
       border: none;
-      padding: 10px 24px;
-      border-radius: 25px;
+      padding: 12px 28px;
+      border-radius: 30px;
       font-weight: 500;
       font-size: 15px;
       cursor: pointer;
       transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(255, 87, 34, 0.15);
 
       &:hover {
-        background: var(--secondary-color, #e64a19);
         transform: translateY(-2px);
+        background: linear-gradient(135deg, #ff7043, #ff5722);
       }
     }
 
     @media (max-width: 768px) {
       .service-card {
-        padding: 25px 20px;
+        padding: 30px 25px;
       }
 
       .icon-wrapper {
         width: 70px;
         height: 70px;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
 
         i {
           font-size: 28px;
