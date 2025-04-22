@@ -19,6 +19,10 @@ import { RouterLink } from '@angular/router';
     <jnz-services-section></jnz-services-section>
 
     <section class="cta-section">
+      <div class="cta-bg-shapes">
+        <div class="cta-shape cta-shape-1"></div>
+        <div class="cta-shape cta-shape-2"></div>
+      </div>
       <div class="container">
         <div class="cta-content">
           <h2>Ready to Get Started?</h2>
@@ -30,32 +34,72 @@ import { RouterLink } from '@angular/router';
   `,
   styles: [`
     .cta-section {
-      padding: 70px 0;
-      background: linear-gradient(135deg, #ff5722, #e64a19);
+      padding: 80px 0;
+      background: linear-gradient(135deg, #ff5722, #ff7043);
       color: white;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-bg-shapes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .cta-shape {
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .cta-shape-1 {
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+      top: -300px;
+      right: -200px;
+    }
+
+    .cta-shape-2 {
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+      bottom: -200px;
+      left: -100px;
     }
 
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 20px;
+      position: relative;
+      z-index: 1;
     }
 
     .cta-content {
-      max-width: 600px;
+      max-width: 650px;
       margin: 0 auto;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 50px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
 
       h2 {
-        font-size: 32px;
-        margin-bottom: 15px;
+        font-size: 36px;
+        margin-bottom: 20px;
         font-weight: 600;
       }
 
       p {
-        font-size: 17px;
-        margin-bottom: 30px;
+        font-size: 18px;
+        margin-bottom: 35px;
         opacity: 0.9;
+        line-height: 1.6;
       }
     }
 
@@ -64,44 +108,69 @@ import { RouterLink } from '@angular/router';
       background: white;
       color: #ff5722;
       border: none;
-      padding: 12px 35px;
+      padding: 14px 40px;
       font-size: 16px;
-      border-radius: 30px;
+      border-radius: 50px;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       font-weight: 600;
       text-decoration: none;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+        z-index: -1;
+        transform: translateY(100%);
+        transition: transform 0.4s ease;
+      }
 
       &:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        background: #f8f8f8;
+        transform: translateY(-5px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+        background: #fff;
+
+        &::before {
+          transform: translateY(0);
+        }
       }
 
       &:active {
         transform: translateY(0);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       }
     }
 
     @media (max-width: 768px) {
       .cta-section {
-        padding: 50px 0;
+        padding: 60px 0;
       }
 
       .cta-content {
+        padding: 35px 25px;
+        border-radius: 15px;
+
         h2 {
-          font-size: 26px;
+          font-size: 28px;
+          margin-bottom: 15px;
         }
 
         p {
-          font-size: 15px;
-          margin-bottom: 25px;
+          font-size: 16px;
+          margin-bottom: 30px;
         }
       }
 
       .cta-button {
-        padding: 10px 30px;
+        padding: 12px 30px;
         font-size: 15px;
       }
     }
