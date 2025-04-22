@@ -27,8 +27,8 @@ import { ServiceCardComponent } from '../service-card/service-card.component';
   `,
   styles: [`
     .services-section {
-      padding: 80px 0;
-      background-color: var(--background-light);
+      padding: 60px 0 80px;
+      background-color: var(--background-light, #f9f9f9);
     }
 
     .container {
@@ -39,17 +39,18 @@ import { ServiceCardComponent } from '../service-card/service-card.component';
 
     .section-header {
       text-align: center;
-      margin-bottom: 60px;
+      margin-bottom: 50px;
 
       h2 {
-        font-size: 36px;
-        color: var(--text-dark);
-        margin-bottom: 15px;
+        font-size: 32px;
+        color: var(--text-dark, #333);
+        margin-bottom: 12px;
+        font-weight: 600;
       }
 
       p {
-        font-size: 18px;
-        color: var(--text-muted);
+        font-size: 17px;
+        color: var(--text-muted, #666);
         max-width: 600px;
         margin: 0 auto;
       }
@@ -57,26 +58,36 @@ import { ServiceCardComponent } from '../service-card/service-card.component';
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 30px;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       .services-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .services-section {
+        padding: 50px 0 60px;
       }
 
       .section-header {
         margin-bottom: 40px;
 
         h2 {
-          font-size: 30px;
+          font-size: 28px;
         }
 
         p {
           font-size: 16px;
         }
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
       }
     }
   `]
@@ -95,7 +106,7 @@ export class ServicesSectionComponent {
       ]
     },
     {
-      icon: 'mobile-alt',
+      icon: 'mobile',
       title: 'Mobile Development',
       description: 'Native and cross-platform mobile applications for iOS and Android.',
       features: [
@@ -128,7 +139,7 @@ export class ServicesSectionComponent {
       ]
     },
     {
-      icon: 'shield-alt',
+      icon: 'shield',
       title: 'Cybersecurity',
       description: 'Protect your digital assets with comprehensive security solutions.',
       features: [
@@ -139,7 +150,7 @@ export class ServicesSectionComponent {
       ]
     },
     {
-      icon: 'chart-line',
+      icon: 'line-chart',
       title: 'Digital Strategy',
       description: 'Strategic consulting for digital transformation and growth.',
       features: [
