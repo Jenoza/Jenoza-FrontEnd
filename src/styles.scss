@@ -3,24 +3,24 @@
 /* Global styles and CSS variables */
 :root {
   --primary-color: #FF5722;
-  --text-color: #ffffff;
-  --background-color: #121212;
+  --text-color: #333333;
+  --background-color: #ffffff;
   --secondary-background: #f8f9fa;
   --footer-background: #1a1a1a;
   --spacing-unit: 1rem;
-  --border-radius: 50px;
+  --border-radius: 8px;
   --transition: all 0.3s ease;
 
   /* Glassmorphism variables */
-  --glass-bg: rgba(26, 24, 24, 0.822);
+  --glass-bg: rgba(255, 255, 255, 0.7);
   --glass-blur: 10px;
   --glass-border: 1px solid rgba(255, 255, 255, 0.2);
 
   /* Neumorphism variables */
-  --neu-bg: 	#222222;
+  --neu-bg: #e0e5ec;
   --neu-shadow-light: #ffffff;
-  --neu-shadow-dark: #121212;
-  --neu-shadow-size: 3px;
+  --neu-shadow-dark: #a3b1c6;
+  --neu-shadow-size: 8px;
 }
 
 /* Reset and base styles */

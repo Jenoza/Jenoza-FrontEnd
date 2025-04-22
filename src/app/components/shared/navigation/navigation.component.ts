@@ -28,7 +28,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   `,
   styles: [`
     .main-nav {
-      background-color: #121212;
+      background-color: white;
       padding: 1rem 0;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       position: fixed;
