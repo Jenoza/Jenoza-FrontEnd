@@ -91,7 +91,7 @@
 
   .values-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -139,8 +139,8 @@
   }
 }
 
-// Team Section
-.team-section {
+// Capabilities Section
+.capabilities-section {
   padding: 5rem 0;
   text-align: center;
   background-color: #fff;
@@ -148,10 +148,21 @@
   h2 {
     font-size: 2.5rem;
     color: #333;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
   }
 
-  .team-grid {
+  .section-intro {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #666;
+    }
+  }
+
+  .capabilities-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
@@ -159,52 +170,58 @@
     margin: 0 auto;
   }
 
-  .team-card {
+  .capability-card {
     background: rgba(245, 247, 250, 0.7);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 2rem;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     &:hover {
       transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
     }
 
-    .glass-image-container {
-      width: 150px;
-      height: 150px;
+    .icon-container {
+      width: 90px;
+      height: 90px;
       margin: 0 auto 1.5rem;
+      background: #FF5722;
       border-radius: 50%;
-      overflow: hidden;
-      border: 3px solid rgba(255, 255, 255, 0.5);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 20px rgba(255, 87, 34, 0.2);
+      margin-bottom: 1.5rem;
 
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+      i {
+        font-size: 2.5rem;
+        color: white;
       }
     }
 
-    .team-info {
+    .capability-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+
       h3 {
         font-size: 1.5rem;
         color: #333;
-        margin-bottom: 0.5rem;
-      }
-
-      .position {
-        color: #FF5722;
-        font-size: 1.1rem;
-        font-weight: 500;
         margin-bottom: 1rem;
+        font-weight: 600;
       }
 
-      .bio {
+      p {
         color: #666;
         line-height: 1.6;
+        flex: 1;
       }
     }
   }
@@ -222,7 +239,7 @@
   .story-section,
   .mission-section,
   .values-section,
-  .team-section {
+  .capabilities-section {
     padding: 3rem 0;
 
     .glass-card,
@@ -232,6 +249,44 @@
 
     h2 {
       font-size: 2rem;
+    }
+
+    .section-intro p {
+      font-size: 1.1rem;
+    }
+  }
+
+  .capabilities-section {
+    .capabilities-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .capability-card {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .values-section {
+    .values-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .values-section {
+    .values-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .value-card {
+      max-width: 400px;
+      margin: 0 auto;
     }
   }
 }
