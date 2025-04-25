@@ -9,8 +9,10 @@
     <div class="glass-card">
       <h2>Our Story</h2>
       <p>
-        Welcome to Jenoza! Founded in 2018, we started with a simple mission: to revolutionize digital experiences through innovative solutions.
-        Over the years, we've grown into a passionate team dedicated to creating exceptional products and services for our clients worldwide.
+        Founded in 2020 and proudly based in the UAE, Jenoza emerged with a single mission: to be the ultimate partner for
+        brands ready to stand out. What began as a creative studio has grown into a multi-disciplinary branding agency
+        delivering end-to-end digital and media solutions. Today, we empower startups, scale-ups, and enterprises with the
+        tools to tell their story, connect with their audience, and lead their industry.
       </p>
     </div>
   </div>
@@ -22,8 +24,9 @@
     <div class="neumorphic-card">
       <h2>Our Mission</h2>
       <p>
-        To revolutionize the industry through innovation, quality, and customer-centric solutions.
-        We strive to create lasting value for our clients while maintaining the highest standards of excellence.
+        To shape the future of branding through bold creativity, smart strategy, and digital innovation. We aim to be the go
+        to agency for media, marketing, and tech — empowering businesses and individuals to leave a lasting impact
+        through every screen, platform, and experience.
       </p>
     </div>
   </div>
@@ -45,19 +48,21 @@
   </div>
 </section>
 
-<!-- Team Section -->
-<section class="team-section">
+<!-- Capabilities Section -->
+<section class="capabilities-section">
   <div class="container">
-    <h2>Meet Our Team</h2>
-    <div class="team-grid">
-      <div class="team-card" *ngFor="let member of team">
-        <div class="glass-image-container">
-          <img [src]="member.image" [alt]="member.name">
+    <h2>Our Capabilities at a Glance</h2>
+    <div class="section-intro">
+      <p>At Jenoza, we offer a seamless blend of strategy, storytelling, and digital execution — designed to position brands for real-world impact.</p>
+    </div>
+    <div class="capabilities-grid">
+      <div class="capability-card" *ngFor="let capability of capabilities">
+        <div class="icon-container">
+          <i class="fa {{ capability.icon }}"></i>
         </div>
-        <div class="team-info">
-          <h3>{{ member.name }}</h3>
-          <p class="position">{{ member.position }}</p>
-          <p class="bio">{{ member.bio }}</p>
+        <div class="capability-info">
+          <h3>{{ capability.title }}</h3>
+          <p>{{ capability.description }}</p>
         </div>
       </div>
     </div>
