@@ -9,18 +9,10 @@ import { CommonModule } from '@angular/common';
     <article class="talent-card">
       <div class="image-container">
         <img [src]="imageUrl" [alt]="title">
-        <div class="category" *ngIf="category">{{category}}</div>
       </div>
       <div class="content">
         <h3>{{title}}</h3>
         <p class="description">{{description}}</p>
-        <div class="client" *ngIf="clientName">
-          <span class="label">Client:</span>
-          <span class="name">{{clientName}}</span>
-        </div>
-        <div class="card-actions">
-          <button class="view-btn">View Project</button>
-        </div>
       </div>
     </article>
   `,

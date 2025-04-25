@@ -11,7 +11,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
       <div class="container">
         <div class="nav-content">
           <div class="logo-container">
-            <img src="/assets/images/Logo101.png" alt="Jenoza" class="logo-image" />
+            <img src="/assets/images/LogoJ.png" alt="Jenoza" class="logo-image" />
           </div>
           <div class="nav-links-container">
             <div class="nav-links">

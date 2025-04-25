@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PageHeaderComponent } from '../../components/shared/page-header/page-header.component';
+import * as L from 'leaflet';
+
 
 @Component({
   selector: 'jnz-contact',
@@ -38,17 +40,7 @@ import { PageHeaderComponent } from '../../components/shared/page-header/page-he
                   </div>
                   <div>
                     <h3>Address</h3>
-                    <p>123 Business Street<br>New York, NY 10001</p>
-                  </div>
-                </div>
-
-                <div class="info-item">
-                  <div class="icon-wrapper">
-                    <i class="fa fa-phone"></i>
-                  </div>
-                  <div>
-                    <h3>Phone</h3>
-                    <p>+1 (555) 123-4567</p>
+                    <p>Office 216, Rolex Twin Tower<br>Baniyas Road, Deira<br>Dubai – UAE</p>
                   </div>
                 </div>
 
@@ -58,7 +50,7 @@ import { PageHeaderComponent } from '../../components/shared/page-header/page-he
                   </div>
                   <div>
                     <h3>Email</h3>
-                    <p>info&#64;jenoza.com</p>
+                    <p>info (at) jenoza (dot) com</p>
                   </div>
                 </div>
               </div>
@@ -160,22 +152,75 @@ import { PageHeaderComponent } from '../../components/shared/page-header/page-he
         </div>
       </div>
     </section>
-
     <section class="map-section">
       <div class="map-container">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095343035!2d-74.00880872316815!3d40.74076623568067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259bf5c1654f3%3A0xbea9b5a68bc2b3a7!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1680532673329!5m2!1sen!2sus"
-          width="100%"
-          height="450"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+        <div id="leaflet-map"></div>
+      </div>
+
+      <div class="collaborate-content">
+        <h2>Let’s Collaborate</h2>
+        <p>We're always open to working with bold thinkers and creative minds.</p>
+        <p>Whether you're a brand, partner, or rising talent — if you're ready to build something impactful, let's talk.</p>
+        <p>Reach us at: <strong>collab (at) jenoza (dot) com</strong></p>
       </div>
     </section>
   `,
   styles: [`
+     /* Overall section layout */
+     .map-section {
+      padding: 40px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    /* Left side map container */
+    .map-container {
+      flex: 1 1 400px;
+      min-width: 300px;
+      height: 400px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Map inside the container */
+    #leaflet-map {
+      height: 100%;
+      width: 100%;
+    }
+
+    /* Right side text content */
+    .collaborate-content {
+      flex: 1 1 400px;
+      min-width: 300px;
+      text-align: left;
+    }
+
+    .collaborate-content h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .collaborate-content p {
+      font-size: 18px;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    /* Make it mobile responsive */
+    @media (max-width: 768px) {
+      .map-section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .collaborate-content {
+        text-align: center;
+      }
+    }
     .contact-section {
       padding: 80px 0 100px;
       background-color: #f8f9fa;
@@ -584,7 +629,7 @@ import { PageHeaderComponent } from '../../components/shared/page-header/page-he
     }
   `]
 })
-export class ContactComponent {
+export class ContactComponent implements AfterViewInit {
   contactForm: FormGroup;
   isSubmitting = false;
 
@@ -605,10 +650,8 @@ export class ContactComponent {
   onSubmit() {
     if (this.contactForm.valid) {
       this.isSubmitting = true;
-      // Here you would typically make an API call to send the form data
+      // API call simulation
       console.log('Form submitted:', this.contactForm.value);
-
-      // Simulate API call
       setTimeout(() => {
         this.isSubmitting = false;
         this.contactForm.reset();
@@ -622,4 +665,30 @@ export class ContactComponent {
       });
     }
   }
+
+  ngAfterViewInit(): void {
+    // Initialize the map
+    const map = L.map('leaflet-map').setView([25.26611, 55.30893], 14);  // Coordinates for Rolex Twin Tower in Deira, Dubai
+
+    // Add tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Create a custom icon using your company logo
+    const companyIcon = L.icon({
+      iconUrl: '/assets/images/PinLogo.png',  // Replace with your company logo's URL
+      iconSize: [32, 32],               // Adjust size as needed
+      iconAnchor: [16, 32],             // The point where the marker touches the map (usually at the bottom center)
+      popupAnchor: [0, -32]             // Position of the popup relative to the icon
+    });
+
+    // Add the marker with the custom icon
+    L.marker([25.26611, 55.30893], {icon: companyIcon}).addTo(map)  // Coordinates for Rolex Twin Tower in Deira
+      .bindPopup('Office 216, Rolex Twin Tower<br>Baniyas Road, Deira<br>Dubai')
+      .openPopup();
+  }
 }
+    
+  
+

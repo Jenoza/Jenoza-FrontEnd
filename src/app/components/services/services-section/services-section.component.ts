@@ -163,69 +163,75 @@ import { ServiceCardComponent } from '../service-card/service-card.component';
 export class ServicesSectionComponent {
   services = [
     {
+      icon: 'paint-brush',
+      title: 'Brand Identity & Creative Design',
+      description: 'Comprehensive visual branding that defines your business and sets it apart.',
+      features: [
+        'Logo & Identity Design',
+        'Brand Guidelines Development',
+        'Visual Storytelling',
+        'Print & Digital Collateral',
+        'Packaging Design'
+      ]
+    },
+    {
+      icon: 'video-camera',
+      title: 'Media Production & Advertising',
+      description: 'High-impact visuals and campaigns that resonate, convert, and build brand equity.',
+      features: [
+        'Video Ads & Promos',
+        'Photography & Post Production',
+        'TV Commercials & Corporate Films',
+        'Social Media Campaigns',
+        'Audio/Podcast Content'
+      ]
+    },
+    {
       icon: 'code',
-      title: 'Web Development',
-      description: 'Custom web applications built with modern technologies and best practices.',
+      title: 'Web Design & Development',
+      description: 'Custom websites built to perform, engage, and elevate your digital presence.',
       features: [
-        'Responsive Design',
-        'Frontend Development',
-        'Backend Development',
-        'API Integration'
-      ]
-    },
-    {
-      icon: 'mobile',
-      title: 'Mobile Development',
-      description: 'Native and cross-platform mobile applications for iOS and Android.',
-      features: [
-        'iOS Development',
-        'Android Development',
-        'Cross-platform Solutions',
-        'App Store Deployment'
-      ]
-    },
-    {
-      icon: 'cloud',
-      title: 'Cloud Services',
-      description: 'Scalable cloud solutions and infrastructure management.',
-      features: [
-        'Cloud Migration',
-        'AWS/Azure Services',
-        'Server Management',
-        'Cloud Security'
-      ]
-    },
-    {
-      icon: 'cogs',
-      title: 'DevOps Services',
-      description: 'Streamline your development and deployment processes.',
-      features: [
-        'CI/CD Pipeline',
-        'Infrastructure as Code',
-        'Container Orchestration',
-        'Monitoring & Logging'
-      ]
-    },
-    {
-      icon: 'shield',
-      title: 'Cybersecurity',
-      description: 'Protect your digital assets with comprehensive security solutions.',
-      features: [
-        'Security Audits',
-        'Penetration Testing',
-        'Security Training',
-        'Compliance Management'
+        'UX/UI Strategy',
+        'Responsive Web Design',
+        'Frontend & Backend Development',
+        'CMS Integration',
+        'E-Commerce Platforms'
       ]
     },
     {
       icon: 'line-chart',
-      title: 'Digital Strategy',
-      description: 'Strategic consulting for digital transformation and growth.',
+      title: 'Digital Marketing & Strategy',
+      description: 'Data-driven digital solutions to grow your reach and drive real results.',
       features: [
-        'Digital Transformation',
-        'Technology Roadmap',
-        'Process Optimization',
-        'Innovation Consulting'
+        'Social Media Marketing',
+        'SEO/SEM Strategy',
+        'Google Ads & PPC Campaigns',
+        'Email Marketing',
+        'Performance Analytic'
+      ]
+    },
+    {
+      icon: 'film',
+      title: 'Multimedia & Content Creation',
+      description: 'Crafting digital experiences through video, animation, and immersive storytelling',
+      features: [
+        'Motion Graphics & Animation',
+        'Explainer Videos',
+        'Reels & Short-Form Content',
+        'Interactive Presentations',
+        '3D Visualization'
+      ]
+    },
+    {
+      icon: 'handshake-o',
+      title: 'Talent Sponsorship & Development',
+      description: 'Nurturing tomorrow’s creatives by investing in raw talent and giving them a platform.',
+      features: [
+        'Talent Incubation Programs',
+        'Creative Mentorship',
+        'Sponsored Projects',
+        'Showcase & Exposure',
+        'Collaboration Opportunities'
       ]
     }
   ];

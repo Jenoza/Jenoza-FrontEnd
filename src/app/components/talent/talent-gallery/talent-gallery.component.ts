@@ -10,52 +10,16 @@ import { TalentCardComponent } from '../talent-card/talent-card.component';
     <section class="talent-section">
       <div class="container">
         <div class="section-header">
-          <h2>Our Showcase</h2>
-          <p>Exploring creativity, innovation, and excellence through our project gallery</p>
-        </div>
-
-        <!-- Filter controls -->
-        <div class="filter-controls">
-          <button
-            class="filter-btn"
-            [class.active]="activeCategory === 'all'"
-            (click)="filterProjects('all')">
-            All
-          </button>
-          <button
-            class="filter-btn"
-            [class.active]="activeCategory === 'design'"
-            (click)="filterProjects('design')">
-            Design
-          </button>
-          <button
-            class="filter-btn"
-            [class.active]="activeCategory === 'development'"
-            (click)="filterProjects('development')">
-            Development
-          </button>
-          <button
-            class="filter-btn"
-            [class.active]="activeCategory === 'branding'"
-            (click)="filterProjects('branding')">
-            Branding
-          </button>
-          <button
-            class="filter-btn"
-            [class.active]="activeCategory === 'marketing'"
-            (click)="filterProjects('marketing')">
-            Marketing
-          </button>
+          <h2>How We Work With Talent</h2>
+          <p>Behind every project is a process rooted in collaboration, creativity, and strategic execution. Here's a glimpse into how we turn raw ideas into refined results.</p>
         </div>
 
         <div class="gallery-grid">
           <jnz-talent-card
-            *ngFor="let project of filteredProjects"
+            *ngFor="let project of projects"
             [imageUrl]="project.imageUrl"
             [title]="project.title"
-            [category]="project.category"
-            [description]="project.description"
-            [clientName]="project.clientName">
+            [description]="project.description">
           </jnz-talent-card>
         </div>
       </div>
@@ -163,57 +127,36 @@ export class TalentGalleryComponent {
 
   projects = [
     {
-      imageUrl: '../../../assets/images/talent/about-us-bg2.jpeg',
-      title: 'Modern Website Redesign',
-      category: 'design',
+      imageUrl: '../../../assets/images/talent/MoodBoard.jpg',
+      title: 'Mood Boards',
       description: 'A complete overhaul of a corporate website with modern UI/UX principles.',
-      clientName: 'TechCorp Inc.'
     },
     {
-      imageUrl: '../../../assets/images/talent/about-us-bg.jpg',
-      title: 'E-commerce Platform',
-      category: 'development',
-      description: 'Custom e-commerce solution with advanced features and payment integration.',
-      clientName: 'Fashion Retailer'
+      imageUrl: '../../../assets/images/talent/StoryBoard.jpg',
+      title: 'Storyboards',
+      description: 'Sequential visual planning that maps out every scene or screen before production begins.'
     },
     {
-      imageUrl: '../../../assets/images/talent/about-us-bg.jpg',
-      title: 'Brand Identity Package',
-      category: 'branding',
-      description: 'Complete brand identity including logo, guidelines, and marketing materials.',
-      clientName: 'StartUp Innovators'
+      imageUrl: '../../../assets/images/talent/WireFrames.jpg',
+      title: 'Wireframes',
+      description: 'Structural layouts of apps and websites, designed to prioritize user experience and functionality.'
     },
     {
-      imageUrl: '../../../assets/images/talent/team-member.jpg',
-      title: 'Digital Marketing Campaign',
-      category: 'marketing',
-      description: 'Integrated marketing campaign across multiple digital platforms.',
-      clientName: 'Consumer Goods Ltd.'
+      imageUrl: '../../../assets/images/talent/BrainStorm.jpg',
+      title: 'Brainstorm Snapshots',
+      description: 'Collaborative sessions with sketches, mind maps, and sticky notes — where raw ideas are born.'
     },
     {
-      imageUrl: '../../../assets/images/talent/background1.png',
-      title: 'Mobile App Interface',
-      category: 'design',
-      description: 'User-centric mobile application interface with intuitive navigation.',
-      clientName: 'Health & Wellness App'
+      imageUrl: '../../../assets/images/talent/ProductionNotes.jpg',
+      title: 'Production Notes',
+      description: 'Blurred insights into planning, scripts, revisions, and timelines — the backbone of smooth execution.'
     },
     {
-      imageUrl: '../../../assets/images/talent/background.jpg',
-      title: 'CRM System Development',
-      category: 'development',
-      description: 'Custom CRM solution tailored to client workflow and business processes.',
-      clientName: 'Sales Enterprise Inc.'
+      imageUrl: '../../../assets/images/talent/Testing.jpg',
+      title: 'Concept Testing',
+      description: 'User and peer feedback on early concepts to refine direction and validate creative ideas.'
+
     }
   ];
 
-  get filteredProjects() {
-    if (this.activeCategory === 'all') {
-      return this.projects;
-    }
-    return this.projects.filter(project => project.category === this.activeCategory);
-  }
-
-  filterProjects(category: string) {
-    this.activeCategory = category;
-  }
 }
