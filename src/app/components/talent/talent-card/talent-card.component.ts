@@ -69,7 +69,7 @@ import { CommonModule } from '@angular/common';
       padding: 25px;
 
       h3 {
-        font-size: 22px;
+        font-size: clamp(1.2rem, 2vw, 1.8rem);
         color: var(--text-dark);
         margin: 0 0 15px;
         line-height: 1.4;
@@ -79,6 +79,7 @@ import { CommonModule } from '@angular/common';
         color: var(--text-muted);
         margin: 0 0 20px;
         line-height: 1.6;
+        font-size: 1rem;
       }
 
       .client {
