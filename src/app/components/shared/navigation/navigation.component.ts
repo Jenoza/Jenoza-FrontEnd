@@ -106,8 +106,8 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 
     @media (max-width: 768px) {
       .nav-links {
-        display: none;
-      }
+    align-items: center;
+  }
     }
   `]
 })

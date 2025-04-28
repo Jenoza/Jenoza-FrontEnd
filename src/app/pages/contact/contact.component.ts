@@ -58,16 +58,16 @@ import * as L from 'leaflet';
               <div class="social-links">
                 <h3>Follow Us</h3>
                 <div class="social-icons">
-                  <a href="#" class="social-link">
+                  <a href="https://www.linkedin.com/" class="social-link">
                     <i class="fa fa-linkedin"></i>
                   </a>
-                  <a href="#" class="social-link">
+                  <a href="https://www.x.com/" class="social-link">
                     <i class="fa fa-twitter"></i>
                   </a>
-                  <a href="#" class="social-link">
+                  <a href="https://www.facebook.com/" class="social-link">
                     <i class="fa fa-facebook"></i>
                   </a>
-                  <a href="#" class="social-link">
+                  <a href="https://www.instagram.com/" class="social-link">
                     <i class="fa fa-instagram"></i>
                   </a>
                 </div>
@@ -153,37 +153,30 @@ import * as L from 'leaflet';
       </div>
     </section>
     <section class="map-section">
-      <div class="map-container">
-        <div id="leaflet-map"></div>
-      </div>
+  <div class="map-container">
+    <div id="leaflet-map"></div>
+  </div>
 
-      <div class="collaborate-content">
-        <h2>Let’s Collaborate</h2>
-        <p>We're always open to working with bold thinkers and creative minds.</p>
-        <p>Whether you're a brand, partner, or rising talent — if you're ready to build something impactful, let's talk.</p>
-        <p>Reach us at: <strong>collab (at) jenoza (dot) com</strong></p>
-      </div>
-    </section>
+  <div class="collaborate-content">
+    <h2>Let’s Collaborate</h2>
+    <p>We're always open to working with bold thinkers and creative minds.</p>
+    <p>Whether you're a brand, partner, or rising talent — if you're ready to build something impactful, let's talk.</p>
+    <p>Reach us at: <strong>collab (at) jenoza (dot) com</strong></p>
+  </div>
+</section>
   `,
   styles: [`
      /* Overall section layout */
      .map-section {
-      padding: 40px 20px;
       display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 40px;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 2rem;
     }
 
     /* Left side map container */
     .map-container {
-      flex: 1 1 400px;
-      min-width: 300px;
-      height: 400px;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      flex: 1;
     }
 
     /* Map inside the container */
@@ -200,8 +193,7 @@ import * as L from 'leaflet';
     }
 
     .collaborate-content h2 {
-      font-size: 32px;
-      margin-bottom: 20px;
+      flex: 1;
     }
 
     .collaborate-content p {
@@ -214,12 +206,33 @@ import * as L from 'leaflet';
     @media (max-width: 768px) {
       .map-section {
         flex-direction: column;
-        text-align: center;
+    padding: 1rem;
       }
+      .map-container {
+        width: 100%;
+  }
 
       .collaborate-content {
-        text-align: center;
+        width: 100%;
       }
+      h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--text-color);
+    }
+    p {
+      margin-bottom: 0.75rem;
+      color: #555;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    strong {
+      color: var(--primary-color);
+    }
+    #leaflet-map {
+    height: 300px; /* ensure map has height on small screens */
+    width: 100%;
+  }
     }
     .contact-section {
       padding: 80px 0 100px;
@@ -650,7 +663,6 @@ export class ContactComponent implements AfterViewInit {
   onSubmit() {
     if (this.contactForm.valid) {
       this.isSubmitting = true;
-      // API call simulation
       console.log('Form submitted:', this.contactForm.value);
       setTimeout(() => {
         this.isSubmitting = false;
@@ -666,27 +678,27 @@ export class ContactComponent implements AfterViewInit {
     }
   }
 
-  ngAfterViewInit(): void {
-    // Initialize the map
-    const map = L.map('leaflet-map').setView([25.26611, 55.30893], 14);  // Coordinates for Rolex Twin Tower in Deira, Dubai
+  async ngAfterViewInit(): Promise<void> {
+    if (typeof window !== 'undefined') {
+      const L = await import('leaflet'); // <--- dynamically import Leaflet here
 
-    // Add tile layer
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap contributors'
-    }).addTo(map);
+      const map = L.map('leaflet-map').setView([25.26611, 55.30893], 14);
 
-    // Create a custom icon using your company logo
-    const companyIcon = L.icon({
-      iconUrl: '/assets/images/PinLogo.png',  // Replace with your company logo's URL
-      iconSize: [32, 32],               // Adjust size as needed
-      iconAnchor: [16, 32],             // The point where the marker touches the map (usually at the bottom center)
-      popupAnchor: [0, -32]             // Position of the popup relative to the icon
-    });
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
 
-    // Add the marker with the custom icon
-    L.marker([25.26611, 55.30893], {icon: companyIcon}).addTo(map)  // Coordinates for Rolex Twin Tower in Deira
-      .bindPopup('Office 216, Rolex Twin Tower<br>Baniyas Road, Deira<br>Dubai')
-      .openPopup();
+      const companyIcon = L.icon({
+        iconUrl: '/assets/images/PinLogo.png',
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32]
+      });
+
+      L.marker([25.26611, 55.30893], { icon: companyIcon }).addTo(map)
+        .bindPopup('Office 216, Rolex Twin Tower<br>Baniyas Road, Deira<br>Dubai')
+        .openPopup();
+    }
   }
 }
     
