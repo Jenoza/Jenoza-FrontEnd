@@ -1,10 +1,25 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { ActivatedRoute } from '@angular/router';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent],
+      imports: [
+        AppComponent,
+        RouterTestingModule
+      ],
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            snapshot: {
+              paramMap: new Map()
+            }
+          }
+        }
+      ]
     }).compileComponents();
   });
 
@@ -20,10 +35,21 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('jenoza');
   });
 
-  it('should render title', () => {
+  it('should render the app structure', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, jenoza');
+
+    // Check for the main container
+    expect(compiled.querySelector('.app-container')).toBeTruthy();
+
+    // Check for the navigation component
+    expect(compiled.querySelector('jnz-navigation')).toBeTruthy();
+
+    // Check for the router outlet
+    expect(compiled.querySelector('router-outlet')).toBeTruthy();
+
+    // Check for the footer component
+    expect(compiled.querySelector('app-footer')).toBeTruthy();
   });
 });
