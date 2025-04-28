@@ -38,14 +38,38 @@
   }
 
   h1 {
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 5vw, 3.2rem);
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    line-height: 1.1;
+    word-break: break-word;
   }
 
   p {
-    font-size: 1.2rem;
+    font-size: 1.05rem;
     opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 900px) {
+    padding: 5rem 1.5rem 4rem 1.5rem;
+    h1 {
+      font-size: clamp(1.5rem, 6vw, 2.5rem);
+    }
+    p {
+      font-size: 0.92rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 3.5rem 0.5rem 2.5rem 0.5rem;
+    h1 {
+      font-size: clamp(1.1rem, 7vw, 1.7rem);
+    }
+    p {
+      font-size: 0.85rem;
+    }
   }
 }
 
