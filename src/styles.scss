@@ -104,19 +104,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 5vw, 3.2rem);
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
 }
 
 h3 {
-  font-size: 1.75rem;
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
 }
 
 p {
   margin-bottom: var(--spacing-unit);
+  font-size: 1rem;
 }
 
 /* Glassmorphism styles */
@@ -170,4 +171,8 @@ p {
   box-shadow:
     var(--neu-shadow-size) var(--neu-shadow-size) calc(var(--neu-shadow-size) * 2) var(--neu-shadow-dark),
     calc(-1 * var(--neu-shadow-size)) calc(-1 * var(--neu-shadow-size)) calc(var(--neu-shadow-size) * 2) var(--neu-shadow-light);
+}
+
+html {
+  font-size: clamp(14px, 1.5vw, 18px);
 }

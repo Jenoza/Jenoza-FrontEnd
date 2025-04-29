@@ -100,7 +100,7 @@ import { CommonModule } from '@angular/common';
     }
 
     h3 {
-      font-size: 22px;
+      font-size: clamp(1.2rem, 2vw, 1.8rem);
       color: #333;
       margin: 0 0 15px;
       text-align: center;
@@ -113,6 +113,7 @@ import { CommonModule } from '@angular/common';
       line-height: 1.6;
       text-align: center;
       flex-grow: 0;
+      font-size: 1rem;
     }
 
     .features {

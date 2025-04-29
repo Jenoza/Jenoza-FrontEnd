@@ -41,7 +41,7 @@
     min-width: 200px;
 
     h2 {
-      font-size: 20px;
+      font-size: clamp(1.2rem, 2vw, 1.8rem);
       font-weight: 500;
       margin-bottom: 25px;
       color: white;
@@ -61,7 +61,7 @@
           text-decoration: none;
           display: flex;
           align-items: center;
-          font-size: 16px;
+          font-size: 1rem;
           transition: all 0.3s;
           padding: 8px 12px;
           border-radius: 8px;
