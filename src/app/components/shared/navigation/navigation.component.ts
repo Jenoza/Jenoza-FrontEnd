@@ -113,24 +113,36 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
       margin-left: 1rem;
       margin-top: 8px;
       transition: transform 0.3s;
+      position: relative;
     }
     .hamburger span {
-      display: block;
+      position: absolute;
+      left: 6px;
+      right: 6px;
       height: 4px;
-      width: 32px;
       background: var(--text-color, #333);
-      margin: 5px 0;
       border-radius: 2px;
-      transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      width: auto;
+    }
+    .hamburger span:nth-child(1) {
+      top: 10px;
+    }
+    .hamburger span:nth-child(2) {
+      top: 18px;
+    }
+    .hamburger span:nth-child(3) {
+      top: 26px;
     }
     .hamburger.open span:nth-child(1) {
-      transform: translateY(9px) rotate(45deg);
+      transform: translateY(8px) rotate(45deg);
     }
     .hamburger.open span:nth-child(2) {
       opacity: 0;
+      transform: scale(0);
     }
     .hamburger.open span:nth-child(3) {
-      transform: translateY(-9px) rotate(-45deg);
+      transform: translateY(-8px) rotate(-45deg);
     }
 
     .nav-overlay {
@@ -142,7 +154,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
       background: rgba(0,0,0,0.18);
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.3s;
+      transition: opacity 0.3s ease;
       z-index: 1000;
     }
     .nav-overlay.open {
@@ -161,27 +173,28 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
       .nav-links {
         position: absolute;
         top: 90px;
-        right: 0;
-        left: 0;
-        background: white;
+        left: 50%;
+        transform: translate(-50%, -20px);
+        max-width: 380px;
+        width: 92vw;
+        background: #fff;
         flex-direction: column;
-        gap: 1.5rem;
-    align-items: center;
+        gap: 0;
+        align-items: center;
         display: none;
-        padding: 2rem 0 1.5rem 0;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        padding: 1.2rem 0 1.2rem 0;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
         opacity: 0;
         pointer-events: none;
-        transform: translateY(-20px);
-        transition: opacity 0.3s, transform 0.3s;
         border: 1.5px solid #ececec;
-        border-radius: 0 0 18px 18px;
+        border-radius: 16px;
+        transition: opacity 0.3s, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       }
       .nav-links.open {
         display: flex;
         opacity: 1;
         pointer-events: auto;
-        transform: translateY(0);
+        transform: translate(-50%, 0) scale(1.03);
       }
       .nav-links.open .nav-link {
         opacity: 0;
@@ -199,9 +212,51 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
           transform: translateY(0);
         }
       }
+      .nav-link {
+        width: 100%;
+        text-align: left;
+        padding: 0.85rem 2.2rem 0.85rem 1.5rem;
+        font-size: 1.15rem;
+        font-weight: 500;
+        color: var(--text-color);
+        background: transparent;
+        border: none;
+        outline: none;
+        transition: color 0.18s, background 0.18s, box-shadow 0.18s, padding 0.18s;
+        position: relative;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .nav-link:not(:last-child) {
+        border-bottom: 1px solid #f2f2f2;
+      }
+      .nav-link.active {
+        color: var(--primary-color);
+        background: #fff7f2;
+        box-shadow: 0 2px 8px 0 rgba(255, 102, 0, 0.06);
+        border-left: 4px solid var(--primary-color);
+        border-radius: 10px;
+        font-weight: 600;
+        padding-left: 1.2rem;
+      }
+      .nav-link.active::after {
+        content: '\u203A'; /* Unicode chevron */
+        color: var(--primary-color);
+        font-size: 1.2em;
+        margin-left: auto;
+        margin-right: 0.5rem;
+        font-weight: bold;
+      }
+      .nav-link:hover:not(.active) {
+        background: #f7f7f7;
+        color: var(--primary-color);
+        padding-left: 1.7rem;
+      }
       .hamburger {
         display: flex;
-  }
+      }
     }
   `]
 })
@@ -216,3 +271,5 @@ export class NavigationComponent {
     }
   }
 }
+
+
