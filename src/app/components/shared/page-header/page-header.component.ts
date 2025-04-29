@@ -47,9 +47,11 @@ import { RouterLink } from '@angular/router';
     }
 
     h1 {
-      font-size: 48px;
+      font-size: clamp(2rem, 5vw, 3.2rem);
       margin-bottom: 20px;
       font-weight: 700;
+      line-height: 1.1;
+      word-break: break-word;
     }
 
     .breadcrumb {
@@ -75,6 +77,12 @@ import { RouterLink } from '@angular/router';
 
       .current {
         color: var(--primary-color);
+      }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: clamp(2rem, 5vw, 3.2rem);
       }
     }
   `]
