@@ -204,10 +204,13 @@ import * as L from 'leaflet';
 
     /* Make it mobile responsive */
     @media (max-width: 768px) {
-      .map-section {
-        flex-direction: column;
+  .map-section {
+    flex-direction: column; /* Stack children vertically */
     padding: 1rem;
-      }
+    width: 100%;            /* Make it full width */
+    min-height: 100vh;      /* Make it long (at least full viewport height) */
+    overflow-y: auto;       /* Allow scrolling if content overflows */
+  }
       .map-container {
         width: 100%;
   }
@@ -223,7 +226,7 @@ import * as L from 'leaflet';
     p {
       margin-bottom: 0.75rem;
       color: #555;
-      font-size: 1rem;
+      font-size: 14px;
       line-height: 1.6;
     }
     strong {
