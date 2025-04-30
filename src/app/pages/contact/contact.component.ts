@@ -158,7 +158,7 @@ import * as L from 'leaflet';
   </div>
 
   <div class="collaborate-content">
-    <h2>Let’s Collaborate</h2>
+    <h2>Let's Collaborate</h2>
     <p>We're always open to working with bold thinkers and creative minds.</p>
     <p>Whether you're a brand, partner, or rising talent — if you're ready to build something impactful, let's talk.</p>
     <p>Reach us at: <strong>collab (at) jenoza (dot) com</strong></p>
@@ -181,7 +181,7 @@ import * as L from 'leaflet';
 
     /* Map inside the container */
     #leaflet-map {
-      height: 100%;
+      height: 400px !important;
       width: 100%;
     }
 
@@ -704,6 +704,6 @@ export class ContactComponent implements AfterViewInit {
     }
   }
 }
-    
-  
+
+
 
