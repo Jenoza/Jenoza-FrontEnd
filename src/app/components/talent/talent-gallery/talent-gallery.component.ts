@@ -90,12 +90,14 @@ import { TalentCardComponent } from '../talent-card/talent-card.component';
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
       gap: 30px;
+      align-items: stretch;
     }
 
     @media (max-width: 768px) {
       .gallery-grid {
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         gap: 20px;
+        align-items: stretch;
       }
 
       .section-header {
