@@ -683,21 +683,22 @@ export class ContactComponent implements AfterViewInit {
 
   async ngAfterViewInit(): Promise<void> {
     if (typeof window !== 'undefined') {
-      const L = await import('leaflet'); // <--- dynamically import Leaflet here
-
+      const leaflet = await import('leaflet');
+      const L = leaflet.default || leaflet; // ✅ FIXED HERE
+  
       const map = L.map('leaflet-map').setView([25.26611, 55.30893], 14);
-
+  
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
       }).addTo(map);
-
+  
       const companyIcon = L.icon({
         iconUrl: '/assets/images/PinLogo.png',
         iconSize: [32, 32],
         iconAnchor: [16, 32],
         popupAnchor: [0, -32]
       });
-
+  
       L.marker([25.26611, 55.30893], { icon: companyIcon }).addTo(map)
         .bindPopup('Office 216, Rolex Twin Tower<br>Baniyas Road, Deira<br>Dubai')
         .openPopup();

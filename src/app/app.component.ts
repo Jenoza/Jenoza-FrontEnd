@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { NavigationComponent } from './components/shared/navigation/navigation.component';
+import { Component, AfterViewInit } from '@angular/core';
+import { Router, NavigationEnd, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { NavigationComponent } from './components/shared/navigation/navigation.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 
 @Component({
@@ -9,7 +9,7 @@ import { FooterComponent } from './components/shared/footer/footer.component';
   standalone: true,
   imports: [
     CommonModule,
-    RouterOutlet,
+    RouterModule, // Import RouterModule here
     NavigationComponent,
     FooterComponent
   ],
@@ -17,7 +17,7 @@ import { FooterComponent } from './components/shared/footer/footer.component';
     <div class="app-container">
       <jnz-navigation></jnz-navigation>
       <main>
-        <router-outlet></router-outlet>
+        <router-outlet></router-outlet> <!-- This is where routes will render -->
       </main>
       <app-footer></app-footer>
     </div>
@@ -35,6 +35,16 @@ import { FooterComponent } from './components/shared/footer/footer.component';
     }
   `]
 })
-export class AppComponent {
-  title = 'jenoza';
+export class AppComponent implements AfterViewInit {
+  constructor(private router: Router) {}
+
+  ngAfterViewInit() {
+    // Listen for NavigationEnd event
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        // Scroll to the top of the page after navigation
+        window.scrollTo(0, 0);
+      }
+    });
+  }
 }

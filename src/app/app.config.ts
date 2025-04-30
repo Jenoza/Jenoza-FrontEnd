@@ -1,11 +1,24 @@
 import { ApplicationConfig } from '@angular/core';
-import { provideRouter, withViewTransitions } from '@angular/router';
-import { provideClientHydration } from '@angular/platform-browser';
+import {
+  provideRouter,
+  withEnabledBlockingInitialNavigation
+} from '@angular/router';
 import { routes } from './app.routes';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes, withViewTransitions()),
-    provideClientHydration()
+    provideRouter(
+      routes,
+      withEnabledBlockingInitialNavigation()
+      // Remove scrollPositionRestoration for Angular v19
+    ),
+    provideHttpClient(
+      withInterceptors([
+        // Optional interceptors
+      ])
+    ),
+    provideAnimations()
   ]
 };
