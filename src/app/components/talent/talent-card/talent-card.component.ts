@@ -18,6 +18,9 @@ import { CommonModule } from '@angular/common';
   `,
   styles: [`
     .talent-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
       /* Glassmorphism effect */
       background: rgba(255, 255, 255, 0.7);
       backdrop-filter: blur(10px);
@@ -66,6 +69,10 @@ import { CommonModule } from '@angular/common';
     }
 
     .content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
       padding: 25px;
 
       h3 {
@@ -135,6 +142,12 @@ import { CommonModule } from '@angular/common';
           font-size: 14px;
         }
       }
+    }
+
+    :host {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
   `]
 })
