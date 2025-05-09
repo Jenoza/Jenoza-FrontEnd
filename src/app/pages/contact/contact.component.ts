@@ -688,8 +688,10 @@ export class ContactComponent implements AfterViewInit {
   
       const map = L.map('leaflet-map').setView([25.26611, 55.30893], 14);
   
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap contributors'
+      L.tileLayer('https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png', {
+        minZoom: 0,
+        maxZoom: 20,
+        // attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       }).addTo(map);
   
       const companyIcon = L.icon({
@@ -700,8 +702,11 @@ export class ContactComponent implements AfterViewInit {
       });
   
       L.marker([25.26611, 55.30893], { icon: companyIcon }).addTo(map)
-        .bindPopup('Office 216, Rolex Twin Tower<br>Baniyas Road, Deira<br>Dubai')
-        .openPopup();
+      .bindPopup(`
+        <p style="margin-left: 10px; margin-bottom: -15px; font-size: 12px;">Office 216, Rolex Twin Tower</p>
+        <p style="margin-left: 30px; margin-bottom: -15px; font-size: 12px;">Baniyas Road, Deira</p>
+        <p style="margin-left: 70px; font-size: 12px;">Dubai</p>
+      `).openPopup();
     }
   }
 }
