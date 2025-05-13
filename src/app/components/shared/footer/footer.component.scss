@@ -1,10 +1,10 @@
 .main-footer {
-  background-color: #252c39;
+  background-color: #ff8533;
   color: white;
   padding: 60px 0;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+  box-shadow: 0 8px 32px 0 rgba(255, 133, 51, 0.4);
   border: none;
   margin: 0;
 
@@ -15,8 +15,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at top right, rgba(255, 87, 51, 0.05), transparent 60%),
-                radial-gradient(circle at bottom left, rgba(0, 123, 255, 0.05), transparent 60%);
+    background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.2), transparent 60%),
+                radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.2), transparent 60%);
     z-index: 0;
   }
 
@@ -33,7 +33,7 @@
   }
 
   &.glass-effect {
-    background: #252c39;
+    background: #ff8533;
   }
 
   .footer-section {
@@ -42,10 +42,10 @@
 
     h2 {
       font-size: clamp(1.2rem, 2vw, 1.8rem);
-      font-weight: 500;
+      font-weight: 600;
       margin-bottom: 25px;
       color: white;
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
     }
 
     ul {
@@ -57,7 +57,7 @@
         margin-bottom: 16px;
 
         .neu-link {
-          color: #ebebeb;
+          color: rgba(255, 255, 255, 0.95);
           text-decoration: none;
           display: flex;
           align-items: center;
@@ -70,9 +70,9 @@
 
           &:hover {
             color: white;
-            background: rgba(255, 255, 255, 0.07);
-            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.4),
-                        inset -2px -2px 5px rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1),
+                        inset -2px -2px 5px rgba(255, 255, 255, 0.25);
             transform: translateY(-2px);
           }
 
@@ -99,50 +99,49 @@
       flex: 1;
       padding: 12px 16px;
       border: none;
-      background-color: rgba(21, 25, 35, 0.8);
+      background-color: rgba(255, 255, 255, 0.25);
       color: white;
       border-radius: 8px 0 0 8px;
       font-size: 16px;
-      box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5),
-                  inset -2px -2px 5px rgba(255, 255, 255, 0.03);
+      box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1),
+                  inset -2px -2px 5px rgba(255, 255, 255, 0.25);
       transition: all 0.3s;
 
       &::placeholder {
-        color: #a5a5a5;
+        color: rgba(255, 255, 255, 0.85);
       }
 
       &:focus {
         outline: none;
-        box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.5),
-                    inset -4px -4px 8px rgba(255, 255, 255, 0.03);
+        background-color: rgba(255, 255, 255, 0.3);
+        box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1),
+                    inset -4px -4px 8px rgba(255, 255, 255, 0.25);
       }
     }
 
     .neu-button {
-      background-color: #ff5733;
-      color: white;
+      background-color: white;
+      color: #ff8533;
       border: none;
       padding: 12px 20px;
       border-radius: 0 8px 8px 0;
       font-size: 16px;
+      font-weight: 600;
       cursor: pointer;
       display: flex;
       align-items: center;
-      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3),
-                  -2px -2px 5px rgba(255, 133, 103, 0.1);
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
       transition: all 0.3s;
 
       &:hover {
-        background-color: #ff6e4e;
+        background-color: #fff;
         transform: translateY(-2px);
-        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3),
-                    -4px -4px 8px rgba(255, 133, 103, 0.1);
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15);
       }
 
       &:active {
         transform: translateY(1px);
-        box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3),
-                    inset -2px -2px 5px rgba(255, 133, 103, 0.1);
+        box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
       }
 
       i {
@@ -158,7 +157,7 @@
     .neu-social {
       width: 40px;
       height: 40px;
-      background-color: rgba(21, 25, 35, 0.8);
+      background-color: rgba(255, 255, 255, 0.25);
       color: white;
       border-radius: 8px;
       display: flex;
@@ -166,20 +165,19 @@
       justify-content: center;
       text-decoration: none;
       transition: all 0.3s;
-      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3),
-                  -2px -2px 5px rgba(255, 255, 255, 0.03);
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1),
+                  -2px -2px 5px rgba(255, 255, 255, 0.25);
 
       &:hover {
-        background-color: #ff5733;
+        background-color: white;
+        color: #ff8533;
         transform: translateY(-4px);
-        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3),
-                    -4px -4px 8px rgba(255, 133, 103, 0.1);
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15);
       }
 
       &:active {
         transform: translateY(1px);
-        box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3),
-                    inset -2px -2px 5px rgba(255, 255, 255, 0.03);
+        box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
       }
 
       i {
