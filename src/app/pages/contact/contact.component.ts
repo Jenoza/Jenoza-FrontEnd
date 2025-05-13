@@ -688,7 +688,7 @@ export class ContactComponent implements AfterViewInit {
   
       const map = L.map('leaflet-map').setView([25.26611, 55.30893], 14);
   
-      L.tileLayer('https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png', {
+      L.tileLayer('https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png?api_key=25d9cc15-b740-4fe7-a047-08aa5d6ca586', {
         minZoom: 0,
         maxZoom: 20,
         // attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
