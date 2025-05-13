@@ -49,13 +49,13 @@
       0 0 8px rgba(255, 255, 255, 0.2); // subtle white glow
   
     // Optional: add backdrop darken for even stronger clarity (if needed)
-    background: rgba(0, 0, 0, 0.082);
+    background: rgba(0, 0, 0, 0.0);
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
   }
   
   p {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     opacity: 0.95;
     max-width: 700px;
     margin: 0 auto;
@@ -66,18 +66,18 @@
       0 0 6px rgba(255, 255, 255, 0.1);
   
     // Optional background mask for better legibility
-    background: rgba(0, 0, 0, 0.082);
+    background: rgba(0, 0, 0, 0.034);
     padding: 0.75rem 1rem;
     border-radius: 0.5rem;
   }
 
   @media (max-width: 900px) {
-    padding: 5rem 1.5rem 4rem 1.5rem;
+    padding: 5.5rem 1.5rem 5.5rem 1.5rem;
     h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-size: clamp(2.5rem, 5.5vw, 3.5rem);
     }
     p {
-      font-size: 16px;
+      font-size: 17px;
     }
   }
 }
