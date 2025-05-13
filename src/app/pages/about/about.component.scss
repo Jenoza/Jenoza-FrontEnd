@@ -178,67 +178,84 @@
 
 // Capabilities Section
 .capabilities-section {
-  padding: 5rem 0;
+  padding: 6rem 2rem;
   text-align: center;
-  background-color: #fff;
+  background: linear-gradient(135deg, #fff3e0, #ffe0c2);
 
   h2 {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 1.5rem;
+    font-size: 3rem;
+    color: #ff5722;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
   }
 
   .section-intro {
     max-width: 800px;
-    margin: 0 auto 3rem;
+    margin: 0 auto 4rem;
 
     p {
-      font-size: 1.2rem;
-      line-height: 1.8;
-      color: #666;
+      font-size: 1.3rem;
+      line-height: 1.9;
+      color: #555;
     }
   }
 
   .capabilities-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
     max-width: 1200px;
     margin: 0 auto;
   }
 
   .capability-card {
-    background: rgba(255, 213, 165, 0.7);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    background: rgba(255, 87, 34, 0.08);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 2.5rem 2rem;
+    border: 1px solid rgba(255, 87, 34, 0.2);
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(255, 87, 34, 0.15);
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
 
     &:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(255, 87, 34, 0.2);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      left: -20%;
+      width: 140%;
+      height: 140%;
+      background: radial-gradient(circle at center, rgba(255, 87, 34, 0.15), transparent 70%);
+      z-index: 0;
+      transition: opacity 0.3s ease;
     }
 
     .icon-container {
-      width: 90px;
-      height: 90px;
-      margin: 0 auto 1.5rem;
-      background: #FF5722;
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, #ff7043, #ff5722);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 10px 20px rgba(255, 87, 34, 0.2);
+      box-shadow: 0 12px 25px rgba(255, 87, 34, 0.3);
       margin-bottom: 1.5rem;
+      z-index: 1;
 
       i {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
         color: white;
       }
     }
@@ -247,19 +264,21 @@
       flex: 1;
       display: flex;
       flex-direction: column;
+      align-items: center;
+      z-index: 1;
 
       h3 {
-        font-size: clamp(1.2rem, 2vw, 1.8rem);
-        color: #333;
+        font-size: clamp(1.4rem, 2vw, 1.9rem);
+        color: #222;
         margin-bottom: 1rem;
-        font-weight: 600;
+        font-weight: 700;
       }
 
       p {
-        color: #666;
-        line-height: 1.6;
-        flex: 1;
-        font-size: 1rem;
+        color: #555;
+        line-height: 1.7;
+        font-size: 1.05rem;
+        max-width: 90%;
       }
     }
   }
