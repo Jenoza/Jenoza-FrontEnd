@@ -1,10 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'jnz-service-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   template: `
     <div class="service-card">
       <div class="card-content">
@@ -20,7 +21,7 @@ import { CommonModule } from '@angular/common';
           </li>
         </ul>
         <div class="card-action">
-          <button class="learn-more">Learn More</button>
+          <button routerLink="/contact" class="learn-more">Learn More</button>
         </div>
       </div>
     </div>
