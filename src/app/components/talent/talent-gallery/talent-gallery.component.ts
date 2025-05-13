@@ -139,22 +139,22 @@ export class TalentGalleryComponent {
       description: 'Sequential visual planning that maps out every scene or screen before production begins.'
     },
     {
-      imageUrl: '../../../assets/images/talent/WireFrames.jpg',
+      imageUrl: '../../../assets/images/talent/wireframe.png',
       title: 'Wireframes',
       description: 'Structural layouts of apps and websites, designed to prioritize user experience and functionality.'
     },
     {
-      imageUrl: '../../../assets/images/talent/BrainStorm.jpg',
+      imageUrl: '../../../assets/images/talent/brainstorming.jpg',
       title: 'Brainstorm Snapshots',
       description: 'Collaborative sessions with sketches, mind maps, and sticky notes — where raw ideas are born.'
     },
     {
-      imageUrl: '../../../assets/images/talent/ProductionNotes.jpg',
+      imageUrl: '../../../assets/images/talent/production-notes.jpg',
       title: 'Production Notes',
       description: 'Blurred insights into planning, scripts, revisions, and timelines — the backbone of smooth execution.'
     },
     {
-      imageUrl: '../../../assets/images/talent/Testing.jpg',
+      imageUrl: '../../../assets/images/talent/concept-testing.jpg',
       title: 'Concept Testing',
       description: 'User and peer feedback on early concepts to refine direction and validate creative ideas.'
 
