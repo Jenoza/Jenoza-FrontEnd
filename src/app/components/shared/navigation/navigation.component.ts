@@ -11,7 +11,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
       <div class="container">
         <div class="nav-content">
           <div class="logo-container">
-            <img src="/assets/images/LogoJ.png" alt="Jenoza" class="logo-image" />
+            <a routerLink="/" class="logo-link">
+              <img src="/assets/images/LogoJ.png" alt="Jenoza" class="logo-image" />
+            </a>
           </div>
           <div class="nav-links-container">
             <div class="nav-links" [class.open]="menuOpen">
@@ -63,6 +65,11 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
       flex-shrink: 0;
       display: flex;
       align-items: center;
+    }
+
+    .logo-link {
+      display: block;
+      cursor: pointer;
     }
 
     .logo-image {
