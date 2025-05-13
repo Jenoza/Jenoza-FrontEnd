@@ -239,7 +239,7 @@ import * as L from 'leaflet';
     }
     .contact-section {
       padding: 80px 0 100px;
-      background-color: #f8f9fa;
+      background-color:rgb(255, 221, 179);
       position: relative;
       overflow: hidden;
     }
@@ -685,22 +685,22 @@ export class ContactComponent implements AfterViewInit {
     if (typeof window !== 'undefined') {
       const leaflet = await import('leaflet');
       const L = leaflet.default || leaflet; // ✅ FIXED HERE
-  
+
       const map = L.map('leaflet-map').setView([25.26611, 55.30893], 14);
-  
+
       L.tileLayer('https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png', {
         minZoom: 0,
         maxZoom: 20,
         // attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       }).addTo(map);
-  
+
       const companyIcon = L.icon({
         iconUrl: '/assets/images/PinLogo.png',
         iconSize: [32, 32],
         iconAnchor: [16, 32],
         popupAnchor: [0, -32]
       });
-  
+
       L.marker([25.26611, 55.30893], { icon: companyIcon }).addTo(map)
       .bindPopup(`
         <p style="margin-left: 10px; margin-bottom: -15px; font-size: 12px;">Office 216, Rolex Twin Tower</p>
